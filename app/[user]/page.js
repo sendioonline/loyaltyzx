@@ -1,9 +1,12 @@
+import Features from "@/components/ui-sections/features";
+import Tables from "@/components/ui-sections/tables";
+
 function user() {
   return (
-    <div>
-      <h1>User Page</h1>
-      <p>User page Details</p>
-    </div>
+    <main>
+      <Features />
+      <Tables />
+    </main>
   );
 }
 
