@@ -7,44 +7,6 @@ function LoginForm() {
   const [errorMessage, setErrorMessage] = useState(""); // State to store API error message
   const [isLoading, setIsLoading] = useState(false); // State for button loading
 
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault(); // Prevent the default form submission
-  //     setErrorMessage(""); // Reset error message
-  //     setIsLoading(true); // Show loading state
-  //     try {
-  //       const response = await axios.get(
-  //         "https://sendio.online/rest-api/customer?filter_by=[email=vikasrajbhar2002@gmail.com]&per_page=1",
-  //         { email }, // Request body
-  //         {
-  //           headers: {
-  //             shop_id: "42",
-  //             Authorization:
-  //               "OXU0c0JkY3AyNU1acmFqRTM3U1kxeGx2azpCNFJ6VWRIcnB4RXVxVFdPUUdKWFBudEw4",
-  //           },
-  //         }
-  //       );
-  //       console.log(response.data);
-  //       const { exists } = response.data; // Extract 'exists' from response
-  //       if (exists) {
-  //         setErrorMessage("User already exists. Please log in.");
-  //       } else {
-  //         alert("User not found. Proceed to register!");
-  //       }
-  //     } catch (error) {
-  //       if (error.response) {
-  //         // Server responded with a status outside of 2xx range
-  //         setErrorMessage(
-  //           error.response.data.message || "Something went wrong. Try again."
-  //         );
-  //       } else {
-  //         // No response or network error
-  //         setErrorMessage("Failed to connect to the server. Please try again.");
-  //       }
-  //     } finally {
-  //       setIsLoading(false); // Remove loading state
-  //     }
-  //   };
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
     setErrorMessage(""); // Reset error message
@@ -52,7 +14,7 @@ function LoginForm() {
 
     try {
       const response = await axios.get(
-        "https://sendio.online/rest-api/customer",
+        "https://retransformx.online/rest-api/customer",
         {
           params: {
             filter_by: `[email=${email}]`, // Dynamically insert email here
@@ -65,16 +27,17 @@ function LoginForm() {
           },
         }
       );
-      console.log(response.data);
-      const { exists } = response.data; // Extract 'exists' from response
-      if (exists) {
-        setErrorMessage("User already exists. Please log in.");
+      const userStatus = response.data.status;
+      console.log(userStatus);
+      //   const { exists } = response.data; // Extract 'exists' from response
+      if (userStatus === "success") {
+        alert("User already exists. Please log in.");
       } else {
         alert("User not found. Proceed to register!");
       }
     } catch (error) {
       if (error.response) {
-        // Server responded with a status outside of 2xx range
+        // Server responded with a status
         setErrorMessage(
           error.response.data.message || "Something went wrong. Try again."
         );
