@@ -25,7 +25,9 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       className="p-2 h-[40px] w-[40px] rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200"
     >
-      <span class="">{theme === "light" ? <DarkIcon /> : <LightIcon />}</span>
+      <span className="">
+        {theme === "light" ? <DarkIcon /> : <LightIcon />}
+      </span>
     </button>
   );
 }
