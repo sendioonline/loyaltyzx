@@ -1,7 +1,7 @@
 import Image from "next/image";
 import userImage from "../../public/user-image.jpg";
-import LoginForm from "../loginForm";
-import RegForm from "../regForm";
+import LoginReg from "../loginReg";
+// import Account from "../account";
 function Account() {
   return (
     <section className="bg-slate-50 dark:bg-gray-900/70">
@@ -14,7 +14,8 @@ function Account() {
           />
         </div>
         <div className="mr-auto place-self-center w-full">
-          <LoginForm />
+          <LoginReg />
+          {/* <Account /> */}
           {/* <RegForm /> */}
         </div>
       </div>
