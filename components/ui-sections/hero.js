@@ -3,7 +3,7 @@ import shopingImage from "../../public/Online-Shopping.svg";
 import userImage from "../../public/user-image.jpg";
 import Link from "next/link";
 import RightArrow from "../ui-components/rightarrow";
-function Hero() {
+function Hero({ buttonLink, buttonText }) {
   return (
     <section className="bg-slate-50 dark:bg-gray-900/70">
       <div className="grid max-w-screen-xl px-6 mx-auto gap-12 md:gap-24 py-12 lg:py-28 lg:grid-cols-2">
@@ -20,10 +20,10 @@ function Hero() {
             tool
           </p>
           <Link
-            href="#"
+            href={buttonLink}
             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-bgMain hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
-            Get started
+            {buttonText}
             <RightArrow />
           </Link>
         </div>

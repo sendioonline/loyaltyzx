@@ -3,7 +3,7 @@ import Hero from "@/components/ui-sections/hero";
 function Home() {
   return (
     <>
-      <Hero />
+      <Hero buttonLink="login" buttonText="Login Now" />
     </>
   );
 }
