@@ -1,6 +1,6 @@
 import Account from "@/components/ui-sections/account";
 
-function page() {
+function AddCustomer() {
   return (
     <div>
       <Account />
@@ -8,4 +8,4 @@ function page() {
   );
 }
 
-export default page;
+export default AddCustomer;
