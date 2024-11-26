@@ -7,8 +7,8 @@ function Features() {
   const logInCustomer = localStorage.getItem("customerData");
   const logInCustomerData = JSON.parse(logInCustomer);
   const logInCustomerLoyalty = logInCustomerData.loyalty;
-  const available_points = logInCustomerLoyalty.available_points.toFixed(2);
-  const available_amount = logInCustomerLoyalty.available_amount.toFixed(2);
+  const available_points = logInCustomerLoyalty?.available_points.toFixed(2);
+  const available_amount = logInCustomerLoyalty?.available_amount.toFixed(2);
   console.log(available_points);
   return (
     <section className="features-area mx-auto max-w-4xl p-4 pt-20">

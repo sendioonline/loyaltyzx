@@ -42,7 +42,7 @@ function Shop() {
   return (
     <main>
       <HeaderTop company={shopData.company_name} />
-      <Hero buttonLink="add-customer" buttonText="Add Customer" />
+      <Hero buttonLink="addCustomer" buttonText="Add Customer" />
     </main>
   );
 }
