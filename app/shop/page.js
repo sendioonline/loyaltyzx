@@ -1,41 +1,39 @@
 "use client";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import axios from "axios";
 import HeaderTop from "@/components/headerTop";
 import Hero from "@/components/ui-sections/hero";
 import { useEffect, useState } from "react";
 
 function Shop() {
+  const [shValue, setShValue] = useState("");
   const [shopData, SetShopData] = useState("");
-  const pathname = usePathname(); // Get the pathname, e.g., "/shop"
-  const searchParams = useSearchParams(); // Get the query parameters
-  const router = useRouter();
   const shopIDS = {
     NDI: 42,
     NDc: 47,
     NzY: 76,
   };
 
-  // Combine pathname and query string
-  const userPath = `${pathname}?${searchParams.toString()}`;
-  const [pathWithSlash, queryString] = userPath.split("?");
-  const uPath = pathWithSlash.replace("/", "");
-  const uShopPath = queryString.split("=")[1];
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const url = window.location.href;
+      const urlParams = new URLSearchParams(window.location.search);
+      const sh = urlParams.get("sh"); // "NDI"
+      setShValue(sh);
+    }
+  }, []);
 
-  // Find the IDS
-  const shopIDNumber = shopIDS[uShopPath];
-  console.log(shopIDNumber);
+  const shopIDNumber = shopIDS[shValue];
   if (shopIDNumber) {
     localStorage.setItem("shopID", shopIDNumber.toString());
   } else {
     localStorage.removeItem("shopID");
-    router.push("/");
+    // router.push("/");
   }
 
   const handleShopData = async (e) => {
     try {
       const dataStatus = await axios.get(
-        `https://retransformx.online/rest-api/shop/${shopIDNumber}`,
+        `https://retransformx.online/rest-api/shop/42`,
         {
           headers: {
             shop_id: 42,
@@ -45,7 +43,6 @@ function Shop() {
         }
       );
       SetShopData(dataStatus.data.data);
-      console.log(dataStatus.data.data);
     } catch (error) {
       console.log(error.message);
     }
