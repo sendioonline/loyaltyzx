@@ -29,7 +29,9 @@ function Shop() {
         }
       );
       SetShopData(dataStatus.data.data);
+      localStorage.setItem("shopData", JSON.stringify(dataStatus.data.data));
     } catch (error) {
+      localStorage.removeItem("shopData");
       console.log(error.message);
     }
   };
@@ -40,7 +42,7 @@ function Shop() {
   return (
     <main>
       <HeaderTop company={shopData.company_name} />
-      <Hero buttonLink="add-user" buttonText="Add User" />
+      <Hero buttonLink="add-customer" buttonText="Add Customer" />
     </main>
   );
 }

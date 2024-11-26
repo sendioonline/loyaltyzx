@@ -23,7 +23,7 @@ function Header() {
         </div>
         <div className="flex lg:flex-1 lg:justify-end gap-4 items-center">
           <ThemeToggle />
-          <Link href="/login">
+          <Link href="/dashboard">
             <div className="user w-14 bg-bgMain p-3 rounded-lg cursor-pointer">
               <Image className="size-full" src={User} alt="User Icon" />
             </div>

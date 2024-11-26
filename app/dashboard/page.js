@@ -4,8 +4,11 @@ import { useRouter } from "next/navigation";
 import Features from "@/components/ui-sections/features";
 import Tables from "@/components/ui-sections/tables";
 import LogOut from "@/components/logOut";
+import HeaderTop from "@/components/headerTop";
 
 const ProtectedPage = () => {
+  const shopData = localStorage.getItem("shopData");
+  const shopDataMain = JSON.parse(shopData);
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -31,6 +34,7 @@ const ProtectedPage = () => {
 
   return (
     <>
+      <HeaderTop company={shopDataMain.company_name} />
       <Features />
       <Tables />
       <LogOut />
