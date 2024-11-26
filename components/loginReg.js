@@ -4,10 +4,10 @@ import axios from "axios"; // Import Axios
 import { useRouter } from "next/navigation";
 
 function LogReg() {
-  const shopData = localStorage.getItem("shopData");
-  const mainShopData = JSON.parse(shopData);
-  const companyID = mainShopData.company_id;
-  console.log(companyID);
+  // const shopData = localStorage.getItem("shopData");
+  // const mainShopData = JSON.parse(shopData);
+  // const companyID = mainShopData.company_id;
+  // console.log(companyID);
   const [activeForm, setActiveForm] = useState("login");
   const [email, setEmail] = useState(""); // State to store email input
   const [errorMessage, setErrorMessage] = useState(""); // State to store API error message

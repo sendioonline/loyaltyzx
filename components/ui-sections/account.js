@@ -15,8 +15,6 @@ function Account() {
         </div>
         <div className="mr-auto place-self-center w-full">
           <LoginReg />
-          {/* <Account /> */}
-          {/* <RegForm /> */}
         </div>
       </div>
     </section>
