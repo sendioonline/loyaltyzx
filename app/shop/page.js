@@ -5,35 +5,21 @@ import Hero from "@/components/ui-sections/hero";
 import { useEffect, useState } from "react";
 
 function Shop() {
-  const [shValue, setShValue] = useState("");
   const [shopData, SetShopData] = useState("");
-  const shopIDS = {
-    NDI: 42,
-    NDc: 47,
-    NzY: 76,
-  };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const url = window.location.href;
-      const urlParams = new URLSearchParams(window.location.search);
-      const sh = urlParams.get("sh"); // "NDI"
-      setShValue(sh);
-    }
-  }, []);
-
-  const shopIDNumber = shopIDS[shValue];
-  if (shopIDNumber) {
-    localStorage.setItem("shopID", shopIDNumber.toString());
-  } else {
-    localStorage.removeItem("shopID");
-    // router.push("/");
-  }
 
   const handleShopData = async (e) => {
+    const shopIDS = {
+      NDI: 42,
+      NDc: 47,
+      NzY: 76,
+    };
+    const urlParams = new URLSearchParams(window.location.search);
+    const sh = urlParams.get("sh"); // "NDI"
+    const shopIDNumber = shopIDS[sh];
+    console.log(shopIDNumber);
     try {
       const dataStatus = await axios.get(
-        `https://retransformx.online/rest-api/shop/42`,
+        `https://retransformx.online/rest-api/shop/${shopIDNumber}`,
         {
           headers: {
             shop_id: 42,
@@ -50,6 +36,7 @@ function Shop() {
   useEffect(() => {
     handleShopData(); // Fetch data when the component mounts
   }, []);
+  console.log(shopData);
   return (
     <main>
       <HeaderTop company={shopData.company_name} />
