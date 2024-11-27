@@ -1,7 +1,7 @@
 import Link from "next/link";
 import RightArrow from "../ui-components/rightarrow";
 
-function Banner({ bgImage, buttonLink, buttonText }) {
+function Banner({ bgImage, buttonLink, buttonText, heading, text }) {
   return (
     <>
       <div className="grid grid-flow-col grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4">
@@ -18,15 +18,13 @@ function Banner({ bgImage, buttonLink, buttonText }) {
             <div className="text-left">
               <div className="">
                 <h3 className="max-w-2xl mb-4 text-lg uppercase font-extrabold tracking-tight leading-none dark:text-white">
-                  Best Customer
+                  {heading}
                 </h3>
                 <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
                   Loyalty Management
                 </h2>
                 <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                  Create personalized customer experiences, influence consumer
-                  behavior, reward your clients & analyze member data using just
-                  one tool
+                  {text}
                 </p>
                 <Link
                   href={buttonLink}

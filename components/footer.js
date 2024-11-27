@@ -39,7 +39,7 @@ function Footer() {
               About Us
             </h2>
             <p className="leading-7 text-gray-500 dark:text-gray-400">
-              Reviewzx.com is part of Vivamart AS , A leader in technology and
+              loyaltyzx.com is part of Vivamart AS , A leader in technology and
               services provider for restaurant and retail industry. Vivamart AS
               , Org nr: 919138262
             </p>

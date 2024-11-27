@@ -45,6 +45,8 @@ function Shop() {
       {/* <HeaderTop company={shopData.company_name} /> */}
       <Banner
         bgImage={shopData.banner}
+        heading={shopData.company_name}
+        text={`Experience delightful flavors, warm ambiance, and exceptional service at our ${shopData.company_name}. Savor every bite in a cozy setting!`}
         buttonLink="login"
         buttonText="Add Customer"
       />
