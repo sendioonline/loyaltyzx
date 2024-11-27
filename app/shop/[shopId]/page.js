@@ -21,7 +21,7 @@ export default async function SingleShop({ params }) {
       bgImage={singleShopData.banner}
       heading={singleShopData.company_name}
       text={`Experience delightful flavors, warm ambiance, and exceptional service at our ${singleShopData.company_name}. Savor every bite in a cozy setting!`}
-      buttonLink={`/shop/${singleShopData.company_id}/add-customer`}
+      buttonLink={`/shop/add-customer/${singleShopData.company_id}`}
       buttonText="Add Customer"
     />
   );
