@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderTop from "@/components/headerTop";
 import Hero from "@/components/ui-sections/hero";
 import { useEffect, useState } from "react";
+import Banner from "@/components/ui-sections/banner";
 
 function Shop() {
   const [shopData, SetShopData] = useState("");
@@ -41,8 +42,13 @@ function Shop() {
   console.log(shopData);
   return (
     <main>
-      <HeaderTop company={shopData.company_name} />
-      <Hero buttonLink="login" buttonText="Add Customer" />
+      {/* <HeaderTop company={shopData.company_name} /> */}
+      <Banner
+        bgImage={shopData.banner}
+        buttonLink="login"
+        buttonText="Add Customer"
+      />
+      {/* <Hero buttonLink="login" buttonText="Add Customer" /> */}
     </main>
   );
 }
