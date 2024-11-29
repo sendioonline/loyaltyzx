@@ -1,7 +1,5 @@
 "use client";
 import axios from "axios";
-import HeaderTop from "@/components/headerTop";
-import Hero from "@/components/ui-sections/hero";
 import { useEffect, useState } from "react";
 import Banner from "@/components/ui-sections/banner";
 

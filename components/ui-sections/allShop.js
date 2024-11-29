@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default async function AllShop() {
-  let data = await fetch("https://retransformx.online/rest-api/shop/", {
+  let data = await fetch("https://sendio.online/rest-api/shop/", {
     headers: {
       shop_id: "42",
       Authorization:
@@ -15,7 +15,10 @@ export default async function AllShop() {
     <section className="features-area mx-auto max-w-7xl p-4 pb-20">
       <div className="all-features grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5  gap-8">
         {allShopData.map((item) => (
-          <Link key={item.company_id} href={`/shop/${item.company_id}`}>
+          <Link
+            key={item.company_id}
+            href={`/shop/${item.company_name.replace(/\s+/g, "-")}`}
+          >
             <div
               // style={{
               //   backgroundImage: `url(${item.banner})`,
