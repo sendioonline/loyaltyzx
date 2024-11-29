@@ -1,8 +1,8 @@
 import Banner from "@/components/ui-sections/banner";
 
 export default async function SingleShop({ params }) {
-  const { shopId } = await params;
-  console.log(shopId);
+  const { shopName } = await params;
+  console.log(shopName);
   const shopIDS = {
     Pk: 77,
     "Tarka-As": 76,
@@ -21,7 +21,7 @@ export default async function SingleShop({ params }) {
     Aahar: 5,
     "VIVAMART-AS": 1,
   };
-  const shopID = shopIDS[shopId];
+  const shopID = shopIDS[shopName];
   console.log(shopID);
   let data = await fetch(`https://sendio.online/rest-api/shop/${shopID}`, {
     headers: {
@@ -38,7 +38,7 @@ export default async function SingleShop({ params }) {
       bgImage={singleShopData.banner}
       heading={singleShopData.company_name}
       text={`Experience delightful flavors, warm ambiance, and exceptional service at our ${singleShopData.company_name}. Savor every bite in a cozy setting!`}
-      buttonLink={`/shop/add-customer/${singleShopData.company_id}`}
+      buttonLink={`/shop/add-customer/${shopName}/`}
       buttonText="Add Customer"
     />
   );

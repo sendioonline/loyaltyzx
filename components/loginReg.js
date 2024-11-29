@@ -3,7 +3,28 @@ import { useState } from "react";
 import axios from "axios"; // Import Axios
 import { useRouter } from "next/navigation";
 
-function LogReg() {
+function LogReg({ singleShopName }) {
+  console.log(singleShopName);
+  const shopIDS = {
+    Pk: 77,
+    "Tarka-As": 76,
+    "Lille-Haveli-Heggedal": 52,
+    Aura: 51,
+    "Jewel-of-india": 50,
+    "Masala-Library-by-HK": 49,
+    AskerHaveli: 48,
+    "1947-Gandhi": 47,
+    Mistral: 46,
+    "TukTuk--Thai-Diner-%26-Takeaway--Sandvika": 45,
+    "TukTuk-Thai-Diner-And-Bar--Asker": 44,
+    "Lille-Haveli-Asker": 43,
+    "Examples-Restaurant": 42,
+    "Desi-Indisk-KitchenAs": 21,
+    Aahar: 5,
+    "VIVAMART-AS": 1,
+  };
+  const shopID = shopIDS[singleShopName];
+  console.log(shopID);
   // const shopData = localStorage.getItem("shopData");
   // const mainShopData = JSON.parse(shopData);
   // const companyID = mainShopData.company_id;
@@ -54,9 +75,9 @@ function LogReg() {
   const sendEmailOTP = async (email, otp) => {
     try {
       const mailstatus = await axios.post(
-        "https://retransformx.online/rest-api/sendmail/shop-send-mail",
+        "https://sendio.online/rest-api/sendmail/shop-send-mail",
         {
-          shopid: 42,
+          shopid: shopID,
           email: email,
           subject: "Loyaltyzx OTP",
           htmlbody: `Your OTP is: ${otp}`,
@@ -105,14 +126,14 @@ function LogReg() {
 
     try {
       const response = await axios.get(
-        "https://retransformx.online/rest-api/customer",
+        "https://sendio.online/rest-api/customer",
         {
           params: {
             filter_by: `[email=${email}]`, // Dynamically insert email here
             per_page: 1,
           },
           headers: {
-            shop_id: "42",
+            shop_id: shopID,
             Authorization:
               "OXU0c0JkY3AyNU1acmFqRTM3U1kxeGx2azpCNFJ6VWRIcnB4RXVxVFdPUUdKWFBudEw4",
           },
@@ -171,7 +192,7 @@ function LogReg() {
     if (validationResult.success) {
       localStorage.removeItem("encodedOTP");
       localStorage.setItem("logedInUser", email);
-      router.push("/dashboard");
+      router.push("/shop/dashboard");
     }
   };
 
@@ -192,7 +213,7 @@ function LogReg() {
           street: regFormData.street,
           city: regFormData.street,
           postcode: regFormData.postcode,
-          shop_id: 42,
+          shop_id: shopID,
         },
         {
           headers: {
@@ -203,7 +224,7 @@ function LogReg() {
       );
       console.log("Reg successfully:", regStatus.data);
       localStorage.setItem("customerData", JSON.stringify(regFormData));
-      router.push("/dashboard");
+      router.push("/shop/dashboard");
       // return regStatus.data;
     } catch (error) {
       setErrorMessage(error.message); // Capture and set error
