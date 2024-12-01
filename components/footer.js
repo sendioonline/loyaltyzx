@@ -2,7 +2,7 @@ import Link from "next/link";
 import Facebook from "./ui-components/facebook";
 import Twitter from "./ui-components/twitter";
 
-function Footer() {
+async function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900/85 pt-12">
       <div className="mx-auto w-full max-w-screen-xl">

@@ -1,4 +1,4 @@
-function LogForm({ handleSubmit }) {
+async function LogForm({ handleSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
       <label

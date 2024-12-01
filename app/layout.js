@@ -1,6 +1,6 @@
 import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../components/header";
+import Header from "../components/userHeader";
 import Footer from "../components/footer";
 
 const roboto = Roboto({
@@ -16,11 +16,10 @@ export const metadata = {
   description: "Best Customer Loyalty Management System",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`antialiased bg-slate-50 dark:bg-bgSecondary`}>
-        <Header />
         {children}
         <Footer />
       </body>

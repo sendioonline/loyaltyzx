@@ -1,9 +1,13 @@
-import Account from "@/components/ui-sections/account";
+import ShopHeader from "@/components/shopHeader";
+import ShopLogin from "@/components/ui-sections/shopLogin";
 
-const { default: Hero } = require("@/components/ui-sections/hero");
-
-function Login() {
-  return <Account />;
+async function Login() {
+  return (
+    <>
+      <ShopHeader />
+      <ShopLogin />
+    </>
+  );
 }
 
 export default Login;
