@@ -16,7 +16,8 @@ export default async function SingleShop({ params }) {
       <Banner
         bgImage={singleShopData.banner}
         heading={singleShopData.company_name}
-        text={`Experience delightful flavors, warm ambiance, and exceptional service at our ${singleShopData.company_name}. Savor every bite in a cozy setting!`}
+        mainHeading={singleShopData.loyaltyVerification_system_text}
+        text={singleShopData.loyaltyVerification_system_description}
         buttonLink={`/${shopName}/account`}
         buttonText="Become A Member"
       />

@@ -1,7 +1,14 @@
 import Link from "next/link";
 import RightArrow from "../ui-components/rightarrow";
 
-async function Banner({ bgImage, buttonLink, buttonText, heading, text }) {
+async function Banner({
+  bgImage,
+  buttonLink,
+  buttonText,
+  heading,
+  mainHeading,
+  text,
+}) {
   return (
     <>
       <section className="grid grid-flow-col grid-rows-2 sm:grid-rows-2 sm:grid-cols-1 md:grid-rows-1 md:grid-cols-2 gap-4 p-4 md:p-0">
@@ -21,7 +28,7 @@ async function Banner({ bgImage, buttonLink, buttonText, heading, text }) {
                   {heading}
                 </h3>
                 <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-                  Loyalty Management
+                  {mainHeading}
                 </h2>
                 <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                   {text}
