@@ -1,16 +1,21 @@
-import MainHeader from "@/components/shopHeader";
-import AllShop from "@/components/ui-sections/allShop";
-import Banner from "@/components/ui-sections/banner";
-import Hero from "@/components/ui-sections/hero";
+import About from "@/components/about";
+import Advantage from "@/components/advantage";
+import AllShops from "@/components/allShops";
+import Footer from "@/components/footer";
+import MainBanner from "@/components/mainBanner";
+import MainHeader from "@/components/mainHeader";
+import MainSteps from "@/components/mainSteps";
 
-async function Home() {
+export default function Home() {
   return (
     <>
       <MainHeader />
-      <Hero buttonLink="/register" buttonText="Register Shop" />
-      <AllShop />
+      <MainBanner buttonLink="/get-started" buttonText="Get Started" />
+      <MainSteps />
+      <AllShops />
+      <Advantage />
+      <About />
+      <Footer />
     </>
   );
 }
-
-export default Home;

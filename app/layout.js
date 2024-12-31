@@ -1,7 +1,6 @@
 import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "../components/userHeader";
-import Footer from "../components/footer";
+import { Toaster } from "react-hot-toast";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -13,15 +12,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Home - Loyaltyzx",
-  description: "Best Customer Loyalty Management System",
+  description: "Best Customer Loyalty Solution System",
 };
 
-export default async function RootLayout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-slate-50 dark:bg-bgSecondary`}>
+      <body className={`antialiased bg-white dark:bg-bgSecondary`}>
+        <Toaster position="top-right" reverseOrder={false} />
         {children}
-        <Footer />
       </body>
     </html>
   );

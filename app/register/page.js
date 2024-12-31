@@ -1,13 +1,13 @@
-import ShopHeader from "@/components/shopHeader";
-import ShopRegister from "@/components/ui-sections/shopRegister";
+import MainHeader from "@/components/mainHeader";
+import ShopRegister from "@/components/shopRegister";
 
-async function RegisterShop() {
+function page() {
   return (
-    <>
-      <ShopHeader />
+    <div>
+      <MainHeader />
       <ShopRegister />
-    </>
+    </div>
   );
 }
 
-export default RegisterShop;
+export default page;
