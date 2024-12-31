@@ -96,7 +96,7 @@ function HeaderMenu({ shopName }) {
             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-bgSecondary hover:bg-bgMain focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             href={`/${shopName}/signin`}
           >
-            Log in / Register
+            Login / Register
           </Link>
         </>
       )}
