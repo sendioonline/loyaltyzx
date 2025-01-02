@@ -48,6 +48,7 @@ export async function getShopID(param) {
 export async function getShopData(param) {
   const res = await fetch(`https://sendio.online/rest-api/shop/${param}`, {
     headers: {
+      "Cache-Control": "no-store",
       shop_id: "42",
       Authorization:
         "OXU0c0JkY3AyNU1acmFqRTM3U1kxeGx2azpCNFJ6VWRIcnB4RXVxVFdPUUdKWFBudEw4",
